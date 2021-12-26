@@ -1,34 +1,40 @@
-import React from "react";
-import useTipJar from "../../hooks/tipjar";
-import TipWidget from "./TipWidget";
+import React from 'react';
+import {useTipJar} from '../../hooks/tipjar';
+import TipWidget from './TipWidget';
+import { ChakraProvider } from '@chakra-ui/react';
 
-interface TipWidgetWrapper {
-    recieverAddress: string;
-    network: string;
+export interface TipWidgetWrapper {
+  recieverAddress: string;
+  network: string;
 }
-export default function TipWidgetWrapper({recieverAddress,network='devnet'}:TipWidgetWrapper) {
+export function TipWidgetWrapper({
+  recieverAddress,
+  network = 'devnet',
+}: TipWidgetWrapper) {
   const {
     phantomWalletExists,
     connectWallet,
     sendTransaction,
     transactionStatus,
     userWalletAddressLoaded,
-    resetTipJar
-  } = useTipJar({ network});
+    resetTipJar,
+  } = useTipJar({ network });
   const handleConnectWallet = () => {
     connectWallet();
   };
   const handleSendTransaction = (tipValue: number) => {
-      sendTransaction(tipValue, recieverAddress)
+    sendTransaction(tipValue, recieverAddress);
   };
   return (
-    <TipWidget
-      sendTransaction={handleSendTransaction}
-      userWalletAddressLoaded={userWalletAddressLoaded}
-      phantomWalletExists={phantomWalletExists}
-      transactionStatus={transactionStatus}
-      connectWallet={handleConnectWallet}
-      resetTipJar={resetTipJar}
-    />
+    <ChakraProvider>
+      <TipWidget
+        sendTransaction={handleSendTransaction}
+        userWalletAddressLoaded={userWalletAddressLoaded}
+        phantomWalletExists={phantomWalletExists}
+        transactionStatus={transactionStatus}
+        connectWallet={handleConnectWallet}
+        resetTipJar={resetTipJar}
+      />
+    </ChakraProvider>
   );
 }
