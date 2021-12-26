@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Connection,
   Transaction,
@@ -11,7 +11,7 @@ import {
   PublicKey,
 } from "@solana/web3.js";
 
-interface TipJarHook {
+export interface TipJarHook {
   network: string | undefined;
 }
 declare global {
@@ -19,13 +19,13 @@ declare global {
     solana: any;
   }
 }
-type TransactionStatus =
+export type TransactionStatus =
   | "idle"
   | "submitting"
   | "submitted"
   | "confirmed"
   | "error";
-export default function useTipJar({ network = "devnet" }: TipJarHook) {
+export function useTipJar({ network = "devnet" }: TipJarHook) {
   const NETWORK = clusterApiUrl(network as Cluster);
   const [walletAddress, setWalletAddress] = useState(null);
   const [phantomWalletExists, setPhantomWalletExists] = useState(false);
@@ -149,6 +149,7 @@ export default function useTipJar({ network = "devnet" }: TipJarHook) {
     phantomWalletExists,
     transactionStatus,
     userWalletAddressLoaded: walletAddress !== null,
+    logs,
     connectWallet,
     sendTransaction,
     resetTipJar,

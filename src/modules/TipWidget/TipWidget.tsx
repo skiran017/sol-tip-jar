@@ -12,7 +12,7 @@ import {
 import { TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
 import TWButton from "../../components/Button";
 
-interface TipWidget {
+export interface TipWidget {
   popularOptions?: Array<number>;
   connectWallet: () => void;
   phantomWalletExists: boolean;
