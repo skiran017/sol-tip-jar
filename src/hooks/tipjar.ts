@@ -45,7 +45,7 @@ export function useTipJar({ network = "devnet" }: TipJarHook) {
     preflightCommitment: "processed",
   };
   const addLog = useCallback(
-    (log) => setLogs((logs) => [...logs, "> " + log]),
+    (log) => setLogs((logs) => [...logs, ">  " + log]),
     []
   );
   const checkIfWalletIsConnected = async () => {
