@@ -36,6 +36,9 @@ Solana Tip Jar provides two solutions:
 	* Regular
 	* Floating Action Button (FAB) - (Coming soon)
 
+CodeSandbox Link:
+https://codesandbox.io/s/solana-tip-jar-z74dm
+
 **Hook Based Custom Implementation**
 ```jsx
 import  *  as  React  from  "react";
