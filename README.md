@@ -19,13 +19,13 @@ Solana Tip Jar is a 100% Web 3.0 based solution which will enable you to accept 
 npm:
 
 ```bash
-npm i sol-tip-jar
+npm i solana-tipjar
 ```
 
 yarn:
 
 ```bash
-yarn add sol-tip-jar
+yarn add solana-tipjar
 ```
 
 ## Quick Start Example:
@@ -167,8 +167,8 @@ const {
 
 ## Credits
 
-- @FarzaTV(Farza) and @_buildspace(BuildSpace) for the first Solana based project which inspired us to build more on Solana chain. 
-- @skranthi97 aka kranthicodes (Sai Kranthi) for contributing to the project.
+- [@FarzaTV(Farza)](https://twitter.com/FarzaTV) and [@_buildspace(BuildSpace)](https://twitter.com/_buildspace) for the first Solana based project which inspired us to build more on Solana chain. 
+- [@skranthi97 aka kranthicodes (Sai Kranthi)](https://twitter.com/skranthi97) for contributing to the project.
 
 
 
