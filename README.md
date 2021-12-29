@@ -166,7 +166,17 @@ const {
 |sendTransaction| (tipValue:number, recieverAddress:string) => void| | sendTransaction(0.02,"R4rYug44LyJBcYQPgTBC7uy52rzWvoBo4tC1p2DvkNmj"); On Calling this Fn, status on Txn will be communicated thru transactionStatus property.
 |resetTipJar| () => void | | On Calling this Fn, it resets the transaction status to idle again, sets the tipjar for another Txn. Call this after a successful transaction to start fresh again. 
 
+## Issues
 
+If you are facing any issues related to global is undefined please use the below script in the head tag of your html template
+
+```html
+<script>
+    if (global === undefined) {
+      var global = window;
+    }
+</script>
+```
 
 ## Credits
 
