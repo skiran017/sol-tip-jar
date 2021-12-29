@@ -14,11 +14,7 @@ import {
 export interface TipJarHook {
   network: string | undefined;
 }
-declare global {
-  interface Window {
-    solana: any;
-  }
-}
+
 export type TransactionStatus =
   | "idle"
   | "submitting"
